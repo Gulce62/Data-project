@@ -139,6 +139,7 @@ main_dataframe.to_csv('/Users/a/Desktop/audio.csv')
 # for i in c:
 #     d = np.append(d, e[i])
 # print(Counter(d).most_common(1)[0][0])
+# print(mode(d))
 
 
 # def printFeatures(dispf):

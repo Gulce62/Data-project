@@ -1,6 +1,5 @@
 import librosa
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 import soundfile as sf
 import sounddevice as sd
@@ -22,15 +21,18 @@ warnings.filterwarnings('ignore')
 
 def sound_features(sound_path):
     data, sampling_rate = sf.read(sound_path, dtype='float32')
-    sd.play(data, sampling_rate)
-    status = sd.wait()  # Wait until file is done playing
-    plt.figure(figsize=(8, 4))
-    librosa.display.waveshow(data, sr=sampling_rate)
-    plt.title('Waveplot - Male Calm')
-    plt.show()
-    chroma_feature(data, sampling_rate)
-    mfcc_feature(data, sampling_rate)
-    mel_feature(data, sampling_rate)
+    if len(data.shape) != 1:
+        return 1
+    else:
+        sd.play(data, sampling_rate)
+        status = sd.wait()  # Wait until file is done playing
+        plt.figure(figsize=(8, 4))
+        librosa.display.waveshow(data, sr=sampling_rate)
+        plt.title('Waveplot - Male Calm')
+        plt.show()
+        chroma_feature(data, sampling_rate)
+        mfcc_feature(data, sampling_rate)
+        mel_feature(data, sampling_rate)
 
 
 def chroma_feature(data, sampling_rate):
@@ -69,5 +71,5 @@ def mel_feature(data, sampling_rate):
     plt.show()
 
 
-sound_file = 'C:\\Users\\a\\Desktop\\Dataset\\Actor_01\\03-01-02-01-01-01-01.wav'
+sound_file = 'C:\\Users\\a\\Desktop\\Dataset\\Actor_01\\03-01-01-01-01-02-01.wav'
 sound_features(sound_file)
