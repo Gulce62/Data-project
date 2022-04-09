@@ -90,5 +90,5 @@ data.rename(columns={'0': 'actors', '0.1': 'emotions', '0.2': 'intensity',
                      '0.6': 'path'}, inplace=True)
 print(data)
 data.emotions.value_counts().plot(kind='bar')
-data.to_csv('/Users/a/Desktop/all_properties1.csv')
+data.to_csv('/Users/a/Desktop/all_properties.csv')
 plt.show()

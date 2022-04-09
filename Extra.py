@@ -46,3 +46,23 @@
 #     max = {maxOfMFCC:.2f},\
 #     mean = {meanOfMFCC:.2f},\
 #     deviation = {stdvOfMFCC:.3f}')
+
+# classify_knn = KNN(k=3, distance_type=2)
+# classify_knn.fit(X_train, y_train)
+# y_prediction = classify_knn.all_prediction(X_train)
+# print("Accuracy Percentage of the KNN classification with", distance_type[2],
+#           "is", calculate_accuracy(y_train, y_prediction))
+
+
+# def confusionMatrix(Matr1, Matr2):
+#     emotionL = ["happy","sad","angry","neutral","calm","disgust","surprised","fearful"]
+#     confusionMatr = np.zeros((len(emotionL),len(emotionL)))
+#     Matr1 = np.array(Matr1)
+#     Matr2 = np.array(Matr2)
+#     for j in range(len(Matr1)):
+#         for i in range(len(emotionL)):
+#             if Matr1[j] == emotionL[i]:
+#                 for k in range(len(emotionL)):
+#                     if Matr2[j] == emotionL[k]:
+#                         confusionMatr[i,k] += 1
+#     return confusionMatr

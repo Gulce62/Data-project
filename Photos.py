@@ -9,16 +9,6 @@ from matplotlib.colors import Normalize
 
 warnings.filterwarnings('ignore')
 
-
-# Modality (01 = full-AV, 02 = video-only, 03 = audio-only) --> Always 03
-# Vocal channel (01 = speech, 02 = song) --> Always 01
-# Emotion (01 = neutral, 02 = calm, 03 = happy, 04 = sad, 05 = angry, 06 = fearful, 07 = disgust, 08 = surprised).
-# Emotional intensity (01 = normal, 02 = strong). NOTE: There is no strong intensity for the 'neutral' emotion.
-# Statement (01 = "Kids are talking by the door", 02 = "Dogs are sitting by the door").
-# Repetition (01 = 1st repetition, 02 = 2nd repetition).
-# Actor (01 to 24. Odd numbered actors are male, even numbered actors are female).
-
-
 def sound_features(sound_path):
     data, sampling_rate = sf.read(sound_path, dtype='float32')
     if len(data.shape) != 1:
