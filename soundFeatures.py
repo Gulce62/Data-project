@@ -47,6 +47,7 @@ def mel_feature(data, sampling_rate):
 
 
 def get_feature_lists(audio_main_path):
+    count = 0
     emotion_list = []
     sound_features_list = []
     actor_folders = os.listdir(audio_main_path)
@@ -60,10 +61,12 @@ def get_feature_lists(audio_main_path):
             file_path = actor_path + '/' + audio_file
             sound_feature = sound_features(file_path)
             if isinstance(sound_feature, int):
+                count += 1
                 print('error')
             else:
                 print(audio_file)
                 emotion_list.append(emotion)
                 sound_features_list.append(sound_feature)
         print(actor)
+    print(count)
     return emotion_list, sound_features_list
