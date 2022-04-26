@@ -2,13 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import soundFeatures
-
 import warnings
-
 warnings.filterwarnings('ignore')
-
-# sound_file = 'C:\\Users\\a\\Desktop\\Dataset\\Actor_01\\03-01-02-01-01-01-01.wav'
-# sound_features(sound_file)
 
 emotion_list = []
 intensity_list = []
@@ -88,7 +83,7 @@ data = pd.read_csv('/Users/a/Desktop/all_properties.csv')
 data.rename(columns={'0': 'actors', '0.1': 'emotions', '0.2': 'intensity',
                      '0.3': 'statement', '0.4': 'repetition', '0.5': 'gender',
                      '0.6': 'path'}, inplace=True)
-print(data)
+fig = plt.figure(figsize=(8, 8))
 data.emotions.value_counts().plot(kind='bar')
 data.to_csv('/Users/a/Desktop/all_properties.csv')
 plt.show()
