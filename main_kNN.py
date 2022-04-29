@@ -70,17 +70,6 @@ def calculate_accuracy(true_value, prediction_value):
     return accuracy_percentage
 
 
-# distance_type = ['euclidian distance', 'manhattan distance', 'cosine distance']
-# for d_type in range(1, 4):
-#     classify_knn = KNN(k=3, distance_type=d_type)
-#     classify_knn.fit(X_train, y_train)
-#     y_prediction_train = classify_knn.all_prediction(X_train)
-#     y_prediction_test = classify_knn.all_prediction(X_test)
-#     print("Accuracy Percentage of KNN classification for train data with",
-#           distance_type[d_type - 1], "is", calculate_accuracy(y_train, y_prediction_train))
-#     print("Accuracy Percentage of KNN classification for test data with",
-#           distance_type[d_type - 1], "is", calculate_accuracy(y_test, y_prediction_test))
-
 accuracy = 0
 optimal_k = None
 optimal_d_type = None
@@ -103,3 +92,5 @@ print(optimal_d_type)
 # TODO ask if the accuracy same
 # TODO create confusion matrix
 # TODO calculate mean squared error
+
+
