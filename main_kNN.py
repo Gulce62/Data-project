@@ -66,6 +66,7 @@ for d_type in range(1, 4):
         print("Accuracy Percentage of KNN classification for test data with",
               distance_type[d_type - 1], "and k =", k_val, "is", val_accuracy)
         if val_accuracy >= accuracy:
+            optimal_k = k_val
             optimal_d_type = d_type
             accuracy = val_accuracy
 print(optimal_k)
