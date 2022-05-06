@@ -63,7 +63,7 @@ for d_type in range(1, 4):
         validate_knn.fit(X_train, y_train)
         y_prediction_val = validate_knn.all_prediction(X_val)
         val_accuracy = calculate_accuracy(y_val, y_prediction_val)
-        print("Accuracy Percentage of KNN classification for test data with",
+        print("Accuracy Percentage of KNN classification for validation data with",
               distance_type[d_type - 1], "and k =", k_val, "is", val_accuracy)
         if val_accuracy >= accuracy:
             optimal_k = k_val
