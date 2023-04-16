@@ -34,7 +34,7 @@ scaled_features = sound_features_list
 scaled_features = scaling_value.fit_transform(scaled_features)
 emotion_features = np.array(emotion_list)
 
-# TODO make cross validation for finding the percentage of test train validation datasets
+
 X_train, X_test, y_train, y_test = train_test_split(
     scaled_features,
     emotion_list,
@@ -48,8 +48,6 @@ X_train, X_val, y_train, y_val = train_test_split(
     test_size=1 / 9,
     random_state=1
 )
-
-# TODO look for reshape necessity
 
 print("X_train shape: {}".format(X_train.shape))
 print("X_test shape: {}".format(X_test.shape))

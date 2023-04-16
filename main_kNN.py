@@ -17,7 +17,6 @@ scaling_value = StandardScaler()
 scaled_features = sound_features_list
 scaled_features = scaling_value.fit_transform(scaled_features)
 
-# TODO make cross validation for finding the percentage of test train validation datasets
 X_train, X_test, y_train, y_test = train_test_split(
     scaled_features,
     emotion_list,
@@ -32,7 +31,6 @@ X_train, X_val, y_train, y_val = train_test_split(
     random_state=60
 )
 
-# TODO look for reshape necessity
 
 print("X_train shape: {}".format(X_train.shape))
 print("X_test shape: {}".format(X_test.shape))
@@ -92,4 +90,3 @@ ax.xaxis.set_ticklabels(['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 
 ax.yaxis.set_ticklabels(['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 'disgust', 'surprised'])
 plt.show()
 
-# TODO calculate mean squared error
